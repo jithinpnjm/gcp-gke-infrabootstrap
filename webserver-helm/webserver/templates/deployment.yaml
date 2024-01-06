@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "webserver.fullname" . }}
+  namespace: {{.Values.namespace}}
+spec:
+  selector:
+    matchLabels:
+      run: {{ template "webserver.fullname" . }}
+  replicas: {{ .Values.replicas}}
+  template:
+    metadata:
+      labels:
+        run: {{ template "webserver.fullname" . }}
+    spec:
+      containers:
+      - image: {{.Values.image.repo}}:{{.Values.image.tag}}
+        imagePullPolicy: IfNotPresent
+        name: {{ template "webserver.fullname" . }}
+        ports:
+        - containerPort: 80
+          name: nginx-port
+        resources:
+        {{- toYaml .Values.resources | nindent 10 }}  
+
+
