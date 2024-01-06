@@ -1,6 +1,6 @@
 project_attributes = {
     "jithin-terraform-allex"                            = {
-        billing_account                   = "01FA63-57D343-7894BE"
+        billing_account                   = "014D0D-FC86D0-4DECE5"
         requestor                         = "jtihin"
         team_dl                           = "publiccloud-engineering"
         usecase                           = "test project for tfe"
@@ -9,7 +9,7 @@ project_attributes = {
         services_enable                   = ["compute.googleapis.com","cloudresourcemanager.googleapis.com","logging.googleapis.com","storage.googleapis.com"]
     },
     "gcp-allex-vpc"                            = {
-        billing_account                   = "01FA63-57D343-7894BE"
+        billing_account                   = "014D0D-FC86D0-4DECE5"
         requestor                         = "jtihin"
         team_dl                           = "publiccloud-engineering"
         usecase                           = "test project for tfe"
