@@ -1,14 +1,9 @@
-fullnameOverride: "nginx-webserver"  # The name of the deployment. 
+fullnameOverride: nginx-webserver
 namespace: nginx
-################################
-# Deployment Configuration
-################################
 image:
-  repo: "dockerhub.com/jithinpnjm23"
-  tag: "v1.0.0"
-#update the replicat count to required value
-replicas: "2"
-#update the request limit values based on the need
+  repo: dockerhub.com/jithinpnjm23
+  tag: ab5c83
+replicas: '2'
 resources:
   limits:
     cpu: 200m
@@ -17,4 +12,4 @@ resources:
     cpu: 100m
     memory: 100Mi
 service:
-  type: LoadBalancer    
+  type: LoadBalancer
