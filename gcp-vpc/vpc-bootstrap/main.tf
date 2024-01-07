@@ -31,4 +31,5 @@ module "nat" {
   source = "../modules/nat"
   project_id              = var.project_id
   gcp_nat_attributes = var.gcp_nat_attributes
+  
 }
