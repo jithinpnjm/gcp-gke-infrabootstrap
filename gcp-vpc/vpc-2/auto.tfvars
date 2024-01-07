@@ -1,4 +1,4 @@
-project_id                          = "gcp-allex-vpc"
+project_id                          = "jithin-terraform-allex-test122"
 vpc_name                            = "us-central1-allex-vpc-02"
 vpc_auto_create_subnetworks         = false
 vpc_delete_default_routes_on_create = false
