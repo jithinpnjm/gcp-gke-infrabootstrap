@@ -13,3 +13,4 @@ resources:
     memory: 100Mi
 service:
   type: LoadBalancer
+imagepullsecret: regcred  

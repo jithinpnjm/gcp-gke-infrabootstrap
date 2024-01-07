@@ -21,6 +21,8 @@ spec:
         - containerPort: 80
           name: nginx-port
         resources:
-        {{- toYaml .Values.resources | nindent 10 }}  
+        {{- toYaml .Values.resources | nindent 10 }}
+      imagePullSecrets:
+        {{ .Values.imagepullsecret}}  
 
 
