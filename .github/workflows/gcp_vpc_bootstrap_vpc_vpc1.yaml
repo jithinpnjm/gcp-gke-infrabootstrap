@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths: 
-    - 'gcp-vpc'
+    - 'gcp-vpc/**'
   pull_request:
 jobs:
   terraform:

@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths: 
-    - 'gcp-bootstrap'  
+    - 'gcp-bootstrap/**'  
   pull_request:
 jobs:
   terraform:
