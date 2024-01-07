@@ -44,6 +44,9 @@ resource "google_container_cluster" "base" {
       resource_labels
     ]
   }
+   node_config {
+    service_account = var.serviceaccount
+  }
   private_cluster_config {
     enable_private_endpoint = true
     enable_private_nodes    = true 
