@@ -14,7 +14,6 @@ resource "google_container_cluster" "base" {
   release_channel {
     channel = var.gke_upgrade_channel
   }
-
   enable_binary_authorization = true
   enable_intranode_visibility = true
   master_auth {
@@ -43,9 +42,6 @@ resource "google_container_cluster" "base" {
       node_config,
       resource_labels
     ]
-  }
-   node_config {
-    service_account = var.serviceaccount
   }
   private_cluster_config {
     enable_private_endpoint = true

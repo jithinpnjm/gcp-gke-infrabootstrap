@@ -1,0 +1,52 @@
+name: DockerBuild
+on:
+  push:
+    branches:
+        - main
+    paths: 
+    - 'nginx-webserver/**'
+env:
+  DOCKER_USER: ${{secrets.DOCKER_USER}}
+  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+  REPO_NAME: ${{secrets.REPO_NAME}}
+  asset_dir: "nginx-webserver"
+jobs:
+  docker_image_build_push:
+    runs-on: ubuntu-latest 
+    outputs: 
+      image_tag: ${{ steps.build.outputs.image_tag }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Set env
+      run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV      
+    - name: Build the Docker image
+      id: build
+      run: |
+        cd $asset_dir
+        docker build -t $DOCKER_USER/$REPO_NAME:$GITHUB_SHA_SHORT . -f docker/Dockerfile 
+        echo "image_tag=$GITHUB_SHA_SHORT" >> "$GITHUB_OUTPUT"
+    - name: Docker Push
+      run: docker push $DOCKER_USER/$REPO_NAME:$GITHUB_SHA_SHORT
+
+  update_helmchart:
+    runs-on: ubuntu-latest
+    needs: docker_image_build_push 
+    env:
+      image_tag: ${{ needs.docker_image_build_push.outputs.image_tag }}
+    steps: 
+      - uses: actions/checkout@v3
+      - name: Update Image Version in the related HelmChart values.yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'webserver-helm/webserver/values.yaml'
+          propertyPath: 'image.tag'
+          value: ${{ env.image_tag }}
+          branch: test
+          targetBranch: main
+          createPR: true
+          message: 'Update Image Version to ${{ env.image_tag }}' 
+        
+        

@@ -155,7 +155,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #0d2ae9;
+		color: #f0102e;
 		font-weight: 600;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
@@ -240,7 +240,7 @@
 	}
 
 	code {
-		background: rgba(255, 255, 255, 0.075);
+		background: rgba(86, 20, 200, 0.075);
 		border-radius: 4px;
 		font-family: "Courier New", monospace;
 		font-size: 0.9rem;
