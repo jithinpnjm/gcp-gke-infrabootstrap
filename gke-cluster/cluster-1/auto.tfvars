@@ -34,7 +34,7 @@ allowed_image_registries      = [
 "quay.io/**",
 "redis/**",
 "ghcr.io/**",
-"jithinpnjm/**",
+"jithinpnjm23/**",
 "docker.io/**"
     ]
 # GKE Node Pool Attributes
