@@ -28,6 +28,7 @@ module "cloud_router" {
   cloud_router_vpc_name   = module.vpc.self_link
 }
 module "nat" {
+  depends_on = [module.cloud_router]
   source = "../modules/nat"
   project_id              = var.project_id
   gcp_nat_attributes = var.gcp_nat_attributes
