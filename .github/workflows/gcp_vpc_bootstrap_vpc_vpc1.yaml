@@ -37,12 +37,13 @@ jobs:
         run: terraform init
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-          
+
       - name: Setup Terraform WorkSpace
         run: |
           terraform workspace new vpc-1
           terraform select workspace vpc-1          
-      
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}  
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
