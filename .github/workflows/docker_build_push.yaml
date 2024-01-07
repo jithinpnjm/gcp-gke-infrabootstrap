@@ -9,6 +9,7 @@ env:
   DOCKER_USER: ${{secrets.DOCKER_USER}}
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
   REPO_NAME: ${{secrets.REPO_NAME}}
+  asset_dir: "nginx-webserver"
 jobs:
   docker_image_build_push:
     runs-on: ubuntu-latest 
@@ -22,7 +23,8 @@ jobs:
     - name: Build the Docker image
       id: build
       run: |
-        docker build . -f docker/Dockerfile -t $DOCKER_USER/$REPO_NAME:$(date +%s)
+        cd $asset_dir
+        docker build -t $DOCKER_USER/$REPO_NAME:$(date +%s) . -f docker/Dockerfile 
         echo "image_tag=$(date +%s)" >> "$GITHUB_OUTPUT"
     - name: Docker Push
       run: docker push $DOCKER_USER/$REPO_NAME:$(date +%s)
