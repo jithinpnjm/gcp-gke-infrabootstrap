@@ -42,7 +42,8 @@ jobs:
         run: |
           terraform workspace new vpc-2
           terraform select workspace vpc-2  
-                
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}        
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
