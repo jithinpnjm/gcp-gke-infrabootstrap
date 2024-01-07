@@ -22,10 +22,12 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
     - name: Build the Docker image
       id: build
+      env:
+        version: $(date +%s)
       run: |
         cd $asset_dir
-        docker build -t $DOCKER_USER/$REPO_NAME:$(date +%s) . -f docker/Dockerfile 
-        echo "image_tag=$(date +%s)" >> "$GITHUB_OUTPUT"
+        docker build -t $DOCKER_USER/$REPO_NAME:$version . -f docker/Dockerfile 
+        echo "image_tag=$version" >> "$GITHUB_OUTPUT"
     - name: Docker Push
       env:
         image_tag: ${{ steps.build.outputs.image_tag }}
