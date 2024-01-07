@@ -5,7 +5,7 @@ project_attributes = {
         team_dl                           = "publiccloud-engineering"
         usecase                           = "test project for tfe"
         company                           = "TechForAll"
-        folder_id                         = ""
+        folder_id                         = "24734950673"
         services_enable                   = ["compute.googleapis.com","cloudresourcemanager.googleapis.com","logging.googleapis.com","storage.googleapis.com"]
     },
     "gcp-allex-vpc"                            = {
@@ -14,7 +14,7 @@ project_attributes = {
         team_dl                           = "publiccloud-engineering"
         usecase                           = "test project for tfe"
         company                           = "TechForAll"
-        folder_id                         = ""
+        folder_id                         = "462162860246"
         services_enable                   = ["compute.googleapis.com","cloudresourcemanager.googleapis.com","logging.googleapis.com","storage.googleapis.com","binaryauthorization.googleapis.com"]
     },
 }
