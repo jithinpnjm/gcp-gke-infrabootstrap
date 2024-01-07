@@ -1,8 +1,8 @@
 fullnameOverride: nginx-webserver
 namespace: nginx
 image:
-  repo: dockerhub.com/jithinpnjm23
-  tag: ab5c83
+  repo: docker.io/jithinpnjm/allex
+  tag: 9a06ff
 replicas: '2'
 resources:
   limits:
@@ -13,3 +13,4 @@ resources:
     memory: 100Mi
 service:
   type: LoadBalancer
+imagepullsecret: regcred
