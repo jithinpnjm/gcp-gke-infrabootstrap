@@ -39,7 +39,7 @@ allowed_image_registries      = [
 node_pool_attributes = {
     "allex-generic-pool-1" = {
         node_count   = 1
-        disk_size_gb = 100
+        disk_size_gb = 50
         version = "1.25.12-gke.500"
         disk_type    = "pd-standard"
         machine_type = "n1-standard-8"
@@ -49,7 +49,7 @@ node_pool_attributes = {
         node_max_surge_on_upgrades = 1
         node_max_unavailable_on_upgrades = 0
         taints_configs = []
-        nodepool_locations = ["us-central1-a"]
+        nodepool_locations = ["us-central1-f"]
         pod_secondary_range = ""
         node_image_type="cos_containerd"
   },  
