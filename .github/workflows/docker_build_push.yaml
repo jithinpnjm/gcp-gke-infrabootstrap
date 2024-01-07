@@ -28,7 +28,6 @@ jobs:
         cd $asset_dir
         docker build -t $DOCKER_USER/$REPO_NAME:$GITHUB_SHA_SHORT . -f docker/Dockerfile 
         echo "image_tag=$GITHUB_SHA_SHORT" >> "$GITHUB_OUTPUT"
-        echo "image_tag=$GITHUB_SHA_SHORT" >> $GITHUB_OUTPUT
     - name: Docker Push
       run: docker push $DOCKER_USER/$REPO_NAME:$GITHUB_SHA_SHORT
 
@@ -44,10 +43,10 @@ jobs:
         with:
           valueFile: 'webserver-helm/webserver/values.yaml'
           propertyPath: 'image.tag'
-          value: $image_tag
+          value: ${{ env.image_tag }}
           branch: test
           targetBranch: main
           createPR: true
-          message: 'Update Image Version to $image_tag' 
+          message: 'Update Image Version to ${{ env.image_tag }}' 
         
         
