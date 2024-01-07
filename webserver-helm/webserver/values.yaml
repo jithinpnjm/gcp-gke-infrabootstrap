@@ -2,7 +2,7 @@ fullnameOverride: nginx-webserver
 namespace: nginx
 image:
   repo: dockerhub.com/jithinpnjm23
-  tag: $GITHUB_SHA_SHORT
+  tag: $image_tag
 replicas: '2'
 resources:
   limits:
