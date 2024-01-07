@@ -28,7 +28,7 @@ jobs:
         cd $asset_dir
         docker build -t $DOCKER_USER/$REPO_NAME:$GITHUB_SHA_SHORT . -f docker/Dockerfile 
         echo "image_tag=$GITHUB_SHA_SHORT" >> "$GITHUB_OUTPUT"
-        run: echo "image_tag=$GITHUB_SHA_SHORT" >> $GITHUB_OUTPUT
+        echo "image_tag=$GITHUB_SHA_SHORT" >> $GITHUB_OUTPUT
     - name: Docker Push
       run: docker push $DOCKER_USER/$REPO_NAME:$GITHUB_SHA_SHORT
 
