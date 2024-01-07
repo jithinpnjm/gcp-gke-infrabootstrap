@@ -6,6 +6,6 @@ project_attributes = {
         usecase                           = "test project for tfe"
         company                           = "TechForAll"
         folder_id                         = "462162860246"
-        services_enable                   = ["compute.googleapis.com","cloudresourcemanager.googleapis.com","logging.googleapis.com","storage.googleapis.com"]
+        services_enable                   = ["compute.googleapis.com","cloudresourcemanager.googleapis.com","logging.googleapis.com","storage.googleapis.com","binaryauthorization.googleapis.com","container.googleapis.com"]
     },
 }
