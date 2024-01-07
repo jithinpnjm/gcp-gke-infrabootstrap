@@ -18,6 +18,7 @@ jobs:
       pull-requests: write   
     env:
         varfile_location: ../vpc-2/auto.tfvars
+        TF_WORKSPACE: vpc-2
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -39,9 +40,7 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Setup Terraform WorkSpace
-        run: |
-          terraform workspace new vpc-2
-          terraform select workspace vpc-2  
+        run: terraform workspace select ${{ env.TF_WORKSPACE }} || terraform workspace new ${{ env.TF_WORKSPACE }}
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}        
       - name: Terraform Validate
