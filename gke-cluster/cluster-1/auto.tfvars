@@ -35,6 +35,7 @@ allowed_image_registries      = [
 "redis:7.0.11-alpine",
 "ghcr.io/**",
 "docker.io/**"
+"jithinpnjm23/*"
     ]
 # GKE Node Pool Attributes
 node_pool_attributes = {
