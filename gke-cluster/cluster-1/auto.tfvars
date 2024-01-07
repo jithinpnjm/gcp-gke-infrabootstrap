@@ -1,4 +1,4 @@
-project_id                     = "us-central1-allex-vpc-01"
+project_id                     = "jithin-terraform-allex-test122"
 gke_version                    = "1.25.12-gke.500"
 name                           = "allex-gke-test-01"
 cluster_location               = "us-central1"
