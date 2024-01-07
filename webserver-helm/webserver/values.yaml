@@ -1,7 +1,7 @@
 fullnameOverride: nginx-webserver
 namespace: nginx
 image:
-  repo: dockerhub.com/jithinpnjm23
+  repo: jithinpnjm23/allex
   tag: ab5c83
 replicas: '2'
 resources:
