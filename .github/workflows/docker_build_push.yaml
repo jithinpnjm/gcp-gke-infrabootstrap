@@ -27,7 +27,9 @@ jobs:
         docker build -t $DOCKER_USER/$REPO_NAME:$(date +%s) . -f docker/Dockerfile 
         echo "image_tag=$(date +%s)" >> "$GITHUB_OUTPUT"
     - name: Docker Push
-      run: docker push $DOCKER_USER/$REPO_NAME:$(date +%s)
+      env:
+        image_tag: ${{ steps.build.outputs.image_tag }}
+      run: docker push $DOCKER_USER/$REPO_NAME:$image_tag
   update_helmchart:
     runs-on: ubuntu-latest
     needs: docker_image_build_push 
