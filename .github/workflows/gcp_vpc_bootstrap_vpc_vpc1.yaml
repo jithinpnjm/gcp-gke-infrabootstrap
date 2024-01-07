@@ -1,10 +1,10 @@
-name: "gcp_bootstrap_dev"
+name: "gcp_bootstrap_vpc1"
 on:
   push:
     branches:
       - main
     paths: 
-    - 'gcp-bootstrap'  
+    - 'gcp-vpc'
   pull_request:
 jobs:
   terraform:
@@ -13,11 +13,11 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./gcp-bootstrap/org-bootstrap/folders
+        working-directory: ./gcp-vpc/vpc-bootstrap
     permissions:
       pull-requests: write   
     env:
-        varfile_location: ../../dev/folders/auto.tfvars
+        varfile_location: ../vpc-1/auto.tfvars
     steps:
       - name: Checkout
         uses: actions/checkout@v3
