@@ -12,7 +12,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./terraform
+        working-directory: gcp-bootstrap/org-bootstrap/folders/auto.tfvars
     env:
         varfile_location: ../../dev/folders/auto.tfvars
     steps:
