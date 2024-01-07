@@ -32,7 +32,7 @@ allowed_image_registries      = [
 "dockerhub.com/**",
 "docker.com/**",
 "quay.io/**",
-"redis*",
+"redis",
 "ghcr.io/**",
 "jithinpnjm23/**",
 "docker.io/**"
