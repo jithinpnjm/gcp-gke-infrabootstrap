@@ -1,5 +1,6 @@
 name: "gcp_bootstrap_gke_cluster-1"
 on:
+  workflow_dispatch: 
   push:
     branches:
       - main
