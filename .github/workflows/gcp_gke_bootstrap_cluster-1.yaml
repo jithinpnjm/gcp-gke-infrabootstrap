@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths: 
-    - 'gke-cluster'
+    - 'gke-cluster/**'
   pull_request:
 jobs:
   terraform:
