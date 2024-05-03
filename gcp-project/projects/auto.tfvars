@@ -1,5 +1,5 @@
 project_attributes = {
-    "jithin-terraform-allex-test123"                            = {
+    "jithin-terraform-allex-ambassador"                            = {
         billing_account                   = "014D0D-FC86D0-4DECE5"
         requestor                         = "jtihin"
         team_dl                           = "publiccloud-engineering"
