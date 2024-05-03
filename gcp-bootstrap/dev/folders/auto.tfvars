@@ -3,7 +3,7 @@ folder_business_units= {
 } 
 subfolders= {
     "dev": {
-        "it-services" :["cloud-gcp"],
+        "it-service" :["cloud-gcp"],
     }
 }
 cos = "dev"
