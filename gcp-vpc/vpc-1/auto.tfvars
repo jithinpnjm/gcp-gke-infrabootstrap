@@ -1,4 +1,4 @@
-project_id = "jithin-terraform-allex-test122"
+project_id = "jithin-tf-allex-ambassador"
 vpc_name                            = "us-central1-allex-vpc-01"
 vpc_auto_create_subnetworks         = false
 vpc_delete_default_routes_on_create = false
@@ -64,6 +64,7 @@ subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 
 },
 }
+
 
 
 
