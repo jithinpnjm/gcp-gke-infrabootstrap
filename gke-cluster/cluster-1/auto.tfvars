@@ -29,13 +29,7 @@ addon_gce_persistent_disk_csi_driver_config    = true
 
 // List of container images registries allowed to deploy
 allowed_image_registries      = [
-"dockerhub.com/**",
-"docker.com/**",
-"quay.io/**",
-"redis:7.0.11-alpine",
-"ghcr.io/**",
-"docker.io/**",
-"docker.io/jithinpnjm/**"
+"*"
     ]
 # GKE Node Pool Attributes
 node_pool_attributes = {
