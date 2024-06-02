@@ -1,5 +1,5 @@
 project_id                     = "jithin-tf-allex-ambassador"
-gke_version                    = "1.28.7-gke.1026000"
+gke_version                    = "1.28.9-gke.1000000"
 name                           = "allex-gke-test-01"
 cluster_location               = "us-central1"
 node_locations                 = ["us-central1-a"]
@@ -37,7 +37,7 @@ node_pool_attributes = {
     "allex-generic-pool-1" = {
         node_count   = 1
         disk_size_gb = 100
-        version = "1.28.7-gke.1026000"
+        version = "1.28.9-gke.1000000"
         disk_type    = "pd-standard"
         machine_type = "e2-standard-2"
         max_pods     = 110
