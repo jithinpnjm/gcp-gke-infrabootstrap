@@ -22,8 +22,6 @@ master_authorized_network_cidr = [
     }
 ]
 
-
-
 // GKE enable/disable addons & backup
 addon_http_load_balancing                      = true
 addon_gce_persistent_disk_csi_driver_config    = true
