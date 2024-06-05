@@ -21,6 +21,7 @@ master_authorized_network_cidr = [
         display_name = "subnet: us-central1-allex-vpc-1-sb-02"
     }
 ]
+
 // GKE enable/disable addons & backup
 addon_http_load_balancing                      = true
 addon_gce_persistent_disk_csi_driver_config    = true
